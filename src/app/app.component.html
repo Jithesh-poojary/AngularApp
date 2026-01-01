@@ -1,5 +1,30 @@
 <mat-toolbar color="primary">
-  <span>CRUD APPLICATION</span>
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Employee Management Portal</span>
   <span class="example-spacer"></span>
- <button mat-raised-button (click)="openAddEditEmpForm()">Add Employee</button>
 </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [opened]="sidenavOpened">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" routerLinkActive="active">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span matListItemTitle>Home</span>
+      </a>
+      <a mat-list-item routerLink="/calculator" routerLinkActive="active">
+        <mat-icon matListItemIcon>calculate</mat-icon>
+        <span matListItemTitle>Calculator</span>
+      </a>
+      <a mat-list-item routerLink="/employees" routerLinkActive="active">
+        <mat-icon matListItemIcon>people</mat-icon>
+        <span matListItemTitle>Employees</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

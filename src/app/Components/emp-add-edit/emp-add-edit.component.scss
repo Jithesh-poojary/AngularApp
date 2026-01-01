@@ -1,0 +1,118 @@
+mat-dialog-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin: -24px -24px 0 -24px;
+  padding: 24px;
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+  }
+}
+
+.content {
+  padding: 24px 0 16px;
+  min-width: 550px;
+  max-width: 650px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  &.gender-row {
+    flex-direction: column;
+    margin-bottom: 16px;
+    
+    .form-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+mat-radio-group {
+  display: flex;
+  gap: 24px;
+
+  mat-radio-button {
+    margin: 0;
+  }
+}
+
+.gender-error {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.action {
+  padding: 16px 0 0;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+
+  button {
+    min-width: 100px;
+    height: 40px;
+    font-weight: 500;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+mat-error {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  mat-dialog-title {
+    margin: -16px -16px 0 -16px;
+    padding: 16px;
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .content {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 16px 0 8px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+
+    &.gender-row {
+      mat-radio-group {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+
+  .action {
+    flex-direction: column-reverse;
+
+    button {
+      width: 100%;
+    }
+  }
+}

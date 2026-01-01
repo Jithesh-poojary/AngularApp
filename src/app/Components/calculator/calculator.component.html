@@ -1,0 +1,45 @@
+<div class="calculator-container">
+  <mat-card class="calculator-card">
+    <mat-card-header>
+      <mat-card-title>
+        Calculator
+      </mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="calculator-body">
+        <div class="display">
+          <input type="text" [value]="currentNumber" readonly class="display-input">
+        </div>
+
+        <div class="calculator-buttons">
+          <button mat-raised-button class="calc-button function-btn" (click)="clear()">C</button>
+          <button mat-raised-button class="calc-button function-btn" (click)="backspace()">
+            <mat-icon>backspace</mat-icon>
+          </button>
+          <button mat-raised-button class="calc-button operator-btn" (click)="getOperation('/')">/</button>
+
+          
+          <button mat-raised-button class="calc-button operator-btn" (click)="getOperation('*')">×</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('7')">7</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('8')">8</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('9')">9</button>
+
+          <button mat-raised-button class="calc-button operator-btn" (click)="getOperation('-')">-</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('4')">4</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('5')">5</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('6')">6</button>
+          <button mat-raised-button class="calc-button operator-btn" (click)="getOperation('+')">+</button>
+
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('1')">1</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('2')">2</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('3')">3</button>
+
+          <button mat-raised-button class="calc-button number-btn" (click)="getNumber('0')">0</button>
+          <button mat-raised-button class="calc-button number-btn" (click)="getDecimal()">.</button>
+          <button mat-raised-button class="calc-button equals-btn span-2" (click)="getResult()">=</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

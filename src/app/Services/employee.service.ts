@@ -1,16 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmployeeService {
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private readonly _http: HttpClient) {}
 
-  openSnackBar(message: string, action: string = 'ok') {
-    this._snackBar.open(message, action, {
-      duration: 1000,
-      verticalPosition: 'top',
-    });
+  addEmployee(data: any): Observable<any> {
+    return this._http.post('http://localhost:3000/employees', data);
+  }
+
+  updateEmployee(id: number, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/employees/${id}`, data);
+  }
+
+  getEmployeeList(): Observable<any> {
+    return this._http.get('http://localhost:3000/employees');
+  }
+
+  deleteEmployee(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:3000/employees/${id}`);
   }
 }
