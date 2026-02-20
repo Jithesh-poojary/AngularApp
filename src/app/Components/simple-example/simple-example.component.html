@@ -1,0 +1,22 @@
+<div class="simple-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Simple Angular Example</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Your name</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+
+      <p>Hello, <strong>{{ name }}</strong>!</p>
+
+      <button mat-raised-button color="primary" (click)="increaseCount()">
+        Click me
+      </button>
+
+      <p>Button clicked {{ clickCount }} times.</p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,24 @@
+<div class="demo-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Input and Output Decorators Demo</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Parent message</mat-label>
+        <input matInput [(ngModel)]="draftMessage" placeholder="Type a message for child">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="sendToChild()">Send to Child (&#64;Input)</button>
+      <p class="event-text">{{ lastEvent }}</p>
+
+      <app-input-output-card
+        [title]="'Child receives via &#64;Input and talks back via &#64;Output'"
+        [message]="currentMessage"
+        (liked)="onLiked($event)"
+        (messageCleared)="onMessageCleared()">
+      </app-input-output-card>
+    </mat-card-content>
+  </mat-card>
+</div>

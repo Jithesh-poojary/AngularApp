@@ -1,0 +1,14 @@
+<mat-card class="child-card">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{ message || 'Type a message in parent and click Send to Child.' }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onLike()">Like Message</button>
+    <button mat-button color="warn" (click)="onClear()">Clear Message</button>
+  </mat-card-actions>
+</mat-card>

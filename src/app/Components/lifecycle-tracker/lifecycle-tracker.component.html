@@ -1,0 +1,23 @@
+<mat-card class="tracker-card">
+  <mat-card-header>
+    <mat-card-title>Child: Lifecycle Tracker</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p><strong>Current &#64;Input counter:</strong> {{ counter }}</p>
+    <p><strong>ngDoCheck count:</strong> {{ doCheckCount }}</p>
+    <p><strong>ngAfterContentChecked count:</strong> {{ contentCheckedCount }}</p>
+    <p><strong>ngAfterViewChecked count:</strong> {{ viewCheckedCount }}</p>
+
+    <div class="projected-content">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="logs">
+      <p><strong>Important hook logs:</strong></p>
+      <ul>
+        <li *ngFor="let log of logs">{{ log }}</li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>
