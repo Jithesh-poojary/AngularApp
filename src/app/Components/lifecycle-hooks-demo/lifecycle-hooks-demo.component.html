@@ -16,10 +16,9 @@
       </div>
 
       <app-lifecycle-tracker *ngIf="showChild" [counter]="counter">
-        <p>Projected content from parent to child for content hooks.</p>
       </app-lifecycle-tracker>
 
-      <p *ngIf="!showChild" class="destroy-note">Child component destroyed. Open browser console to see ngOnDestroy log.</p>
+      <p *ngIf="!showChild" class="destroy-note">Child removed. This triggers <strong>ngOnDestroy</strong> in the child component.</p>
     </mat-card-content>
   </mat-card>
 </div>

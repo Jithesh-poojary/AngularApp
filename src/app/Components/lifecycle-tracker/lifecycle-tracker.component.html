@@ -1,22 +1,21 @@
 <mat-card class="tracker-card">
   <mat-card-header>
-    <mat-card-title>Child: Lifecycle Tracker</mat-card-title>
+    <mat-card-title>Simple Child Lifecycle</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
     <p><strong>Current &#64;Input counter:</strong> {{ counter }}</p>
-    <p><strong>ngDoCheck count:</strong> {{ doCheckCount }}</p>
-    <p><strong>ngAfterContentChecked count:</strong> {{ contentCheckedCount }}</p>
-    <p><strong>ngAfterViewChecked count:</strong> {{ viewCheckedCount }}</p>
+    <p>This simple example focuses on 3 hooks only:</p>
+    <ul class="hook-list">
+      <li><strong>ngOnInit</strong> → runs once when child is created</li>
+      <li><strong>ngOnChanges</strong> → runs when &#64;Input value changes</li>
+      <li><strong>ngOnDestroy</strong> → runs when child is removed</li>
+    </ul>
 
-    <div class="projected-content">
-      <ng-content></ng-content>
-    </div>
-
-    <div class="logs">
-      <p><strong>Important hook logs:</strong></p>
+    <div class="logs" *ngIf="events.length">
+      <p><strong>Hook event log:</strong></p>
       <ul>
-        <li *ngFor="let log of logs">{{ log }}</li>
+        <li *ngFor="let event of events">{{ event }}</li>
       </ul>
     </div>
   </mat-card-content>

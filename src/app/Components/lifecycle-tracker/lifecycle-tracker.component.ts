@@ -1,10 +1,5 @@
 import {
-  AfterContentChecked,
-  AfterContentInit,
-  AfterViewChecked,
-  AfterViewInit,
   Component,
-  DoCheck,
   Input,
   OnChanges,
   OnDestroy,
@@ -25,50 +20,30 @@ export class LifecycleTrackerComponent
   implements
     OnChanges,
     OnInit,
-    DoCheck,
-    AfterContentInit,
-    AfterContentChecked,
-    AfterViewInit,
-    AfterViewChecked,
     OnDestroy {
   @Input() counter = 0;
 
-  doCheckCount = 0;
-  contentCheckedCount = 0;
-  viewCheckedCount = 0;
-  logs: string[] = [];
+  events: string[] = [];
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['counter']) {
-      this.logs.unshift(`ngOnChanges: counter -> ${changes['counter'].currentValue}`);
+      const change = changes['counter'];
+      const message = change.firstChange
+        ? `ngOnChanges: initial counter = ${change.currentValue}`
+        : `ngOnChanges: counter changed to ${change.currentValue}`;
+      this.addEvent(message);
     }
   }
 
   ngOnInit(): void {
-    this.logs.unshift('ngOnInit called');
-  }
-
-  ngDoCheck(): void {
-    this.doCheckCount++;
-  }
-
-  ngAfterContentInit(): void {
-    this.logs.unshift('ngAfterContentInit called');
-  }
-
-  ngAfterContentChecked(): void {
-    this.contentCheckedCount++;
-  }
-
-  ngAfterViewInit(): void {
-    this.logs.unshift('ngAfterViewInit called');
-  }
-
-  ngAfterViewChecked(): void {
-    this.viewCheckedCount++;
+    this.addEvent('ngOnInit: child component initialized');
   }
 
   ngOnDestroy(): void {
-    console.log('ngOnDestroy called for LifecycleTrackerComponent');
+    console.log('ngOnDestroy: child component destroyed');
+  }
+
+  private addEvent(message: string): void {
+    this.events.unshift(message);
   }
 }
