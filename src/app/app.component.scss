@@ -6,6 +6,21 @@ mat-toolbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.top-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.top-profile-link:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -19,32 +34,45 @@ mat-sidenav {
   width: 250px;
   padding: 0;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
 
-  mat-nav-list {
-    padding: 8px 0;
+.sidenav-layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-    a {
-      margin: 4px 8px;
-      border-radius: 8px;
-      transition: all 0.2s;
+.main-nav-list {
+  padding: 8px 0;
+}
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
+.bottom-nav-list {
+  margin-top: auto;
+  border-top: 1px solid #e5e7eb;
+  padding: 8px 0;
+}
 
-      &.active {
-        background-color: rgba(63, 81, 181, 0.1);
-        color: #3f51b5;
+.main-nav-list a,
+.bottom-nav-list a {
+  margin: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
 
-        mat-icon {
-          color: #3f51b5;
-        }
-      }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
 
-      mat-icon {
-        margin-right: 16px;
-      }
+  &.active {
+    background-color: rgba(63, 81, 181, 0.1);
+    color: #3f51b5;
+
+    mat-icon {
+      color: #3f51b5;
     }
+  }
+
+  mat-icon {
+    margin-right: 16px;
   }
 }
 
@@ -61,5 +89,9 @@ mat-sidenav-content {
 
   mat-sidenav {
     width: 200px;
+  }
+
+  .top-profile-link span {
+    display: none;
   }
 }

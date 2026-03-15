@@ -1,0 +1,115 @@
+.profile-page {
+  padding: 20px;
+}
+
+.profile-shell {
+  border-radius: 10px;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.user-strip {
+  text-align: center;
+  padding-top: 36px;
+}
+
+.avatar-circle {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #0e7490;
+  color: #fff;
+  font-size: 44px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-strip h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.user-strip p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 18px;
+}
+
+.form-panel h2 {
+  margin: 0 0 14px;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.field-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.two-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.one-col {
+  grid-template-columns: 1fr;
+}
+
+.actions-row {
+  margin-top: 12px;
+}
+
+.saved {
+  margin: 8px 0 0;
+  color: #15803d;
+}
+
+.form-panel .mat-mdc-form-field {
+  width: 100%;
+}
+
+.form-panel .mat-mdc-form-field input,
+.form-panel .mat-mdc-select-value-text {
+  font-size: 34px;
+}
+
+@media (max-width: 1440px) {
+  .profile-layout {
+    grid-template-columns: 230px 1fr;
+  }
+
+  .form-panel h2 {
+    font-size: 34px;
+  }
+
+  .user-strip h3 {
+    font-size: 24px;
+  }
+
+  .form-panel .mat-mdc-form-field input,
+  .form-panel .mat-mdc-select-value-text,
+  .user-strip p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .form-panel h2 {
+    font-size: 30px;
+  }
+}

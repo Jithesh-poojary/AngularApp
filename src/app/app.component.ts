@@ -5,6 +5,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
+import { ProfileStateService } from './Services/profile-state.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    AsyncPipe,
     RouterOutlet,
     RouterLink,
     RouterLinkActive
@@ -24,6 +27,10 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class AppComponent {
   sidenavOpened = true;
+
+  topProfileText$ = this.profileStateService.topProfileText$;
+
+  constructor(private readonly profileStateService: ProfileStateService) {}
 
   toggleSidenav() {
     this.sidenavOpened = !this.sidenavOpened;

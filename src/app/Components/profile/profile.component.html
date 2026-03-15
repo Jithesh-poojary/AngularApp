@@ -1,0 +1,64 @@
+<div class="profile-page">
+  <mat-card class="profile-shell">
+    <mat-card-content>
+      <div class="profile-layout">
+        <section class="user-strip">
+          <div class="avatar-circle">{{ avatarInitials }}</div>
+          <h3>{{ profile.title }} {{ profileHeaderName }}</h3>
+          <p>{{ profile.email }}</p>
+        </section>
+
+        <section class="form-panel">
+          <h2>Profile</h2>
+
+          <div class="field-grid two-col">
+            <mat-form-field appearance="fill">
+              <mat-label>First Name</mat-label>
+              <input matInput [(ngModel)]="profile.firstName">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input matInput [(ngModel)]="profile.lastName">
+            </mat-form-field>
+          </div>
+
+          <div class="field-grid two-col">
+            <mat-form-field appearance="fill">
+              <mat-label>Title</mat-label>
+              <mat-select [(ngModel)]="profile.title">
+                <mat-option value="Mr.">Mr.</mat-option>
+                <mat-option value="Ms.">Ms.</mat-option>
+                <mat-option value="Mrs.">Mrs.</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Display Name</mat-label>
+              <input matInput [(ngModel)]="profile.displayName">
+            </mat-form-field>
+          </div>
+
+          <div class="field-grid one-col">
+            <mat-form-field appearance="fill">
+              <mat-label>Mobile Number</mat-label>
+              <input matInput [(ngModel)]="profile.mobile">
+            </mat-form-field>
+          </div>
+
+          <div class="field-grid one-col">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput [(ngModel)]="profile.email">
+            </mat-form-field>
+          </div>
+
+          <div class="actions-row">
+            <button mat-raised-button color="primary" (click)="saveProfile()">Update Profile</button>
+          </div>
+          <p class="saved" *ngIf="savedMessage">{{ savedMessage }}</p>
+        </section>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
