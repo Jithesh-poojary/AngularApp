@@ -1,0 +1,42 @@
+<mat-card class="table-card">
+  <mat-card-header>
+    <mat-card-title>{{ tableTitle }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="table-actions" *ngIf="entries.length">
+      <button mat-stroked-button color="warn" (click)="requestClear()">Clear All (Output)</button>
+    </div>
+
+    <div class="table-wrap" *ngIf="entries.length; else emptyState">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>City</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of entries">
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.email }}</td>
+            <td>{{ entry.role }}</td>
+            <td>{{ entry.city }}</td>
+            <td>{{ entry.createdAt }}</td>
+            <td>
+              <button mat-button color="warn" (click)="requestDelete(entry.id)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #emptyState>
+      <p class="empty-text">No entries yet. Fill the form and click Add to Table.</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

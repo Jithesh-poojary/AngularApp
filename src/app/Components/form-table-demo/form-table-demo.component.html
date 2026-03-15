@@ -1,0 +1,42 @@
+<div class="form-demo-page">
+  <mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title>User Form with Input/Output + Lifecycle Hooks</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="form-grid">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="formData.name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="formData.email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Role</mat-label>
+          <input matInput [(ngModel)]="formData.role">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>City</mat-label>
+          <input matInput [(ngModel)]="formData.city">
+        </mat-form-field>
+      </div>
+
+      <div class="action-row">
+        <button mat-raised-button color="primary" (click)="submitForm()">Add to Table</button>
+      </div>
+
+      <app-entries-table
+        [tableTitle]="'Submitted Users'"
+        [entries]="submittedEntries"
+        (deleteRequested)="removeEntry($event)"
+        (clearRequested)="clearTable()">
+      </app-entries-table>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,38 @@
+.table-card {
+  margin-top: 12px;
+  border-left: 4px solid #f59e0b;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 8px;
+  font-size: 14px;
+}
+
+th {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.empty-text {
+  margin: 12px 0;
+  color: #64748b;
+}

@@ -1,0 +1,14 @@
+<mat-card class="sender-card">
+  <mat-card-header>
+    <mat-card-title>Component A (Sender)</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Type message</mat-label>
+      <input matInput [(ngModel)]="messageDraft" (keyup.enter)="send()">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="send()">Send to Component B</button>
+  </mat-card-content>
+</mat-card>

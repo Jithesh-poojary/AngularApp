@@ -1,0 +1,22 @@
+<mat-card class="receiver-card">
+  <mat-card-header>
+    <mat-card-title>Component B (Receiver)</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="status" *ngIf="latestMessage; else waiting">
+      Latest message: <strong>{{ latestMessage }}</strong>
+    </p>
+
+    <ng-template #waiting>
+      <p class="status muted">No message received yet.</p>
+    </ng-template>
+
+    <div class="history" *ngIf="history.length">
+      <p class="history-title">Message history</p>
+      <ul>
+        <li *ngFor="let item of history">{{ item }}</li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -4,9 +4,9 @@
 <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
         <div class="row">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="fill">
                 <mat-label>First name</mat-label>
-                <input matInput type="text" placeholder="Ex. John" formControlName="firstName">
+                <input matInput type="text" formControlName="firstName">
                 <mat-error *ngIf="empForm.get('firstName')?.hasError('required')">
                     First name is required
                 </mat-error>
@@ -14,9 +14,9 @@
                     Minimum 2 characters required
                 </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="fill">
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="Ex. Doe" formControlName="lastName">
+                <input matInput formControlName="lastName">
                 <mat-error *ngIf="empForm.get('lastName')?.hasError('required')">
                     Last name is required
                 </mat-error>
@@ -27,9 +27,9 @@
         </div>
 
         <div class="row">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" placeholder="Ex. john.doe@example.com" formControlName="email">
+                <input matInput type="email" formControlName="email">
                 <mat-error *ngIf="empForm.get('email')?.hasError('required')">
                     Email is required
                 </mat-error>
@@ -37,7 +37,7 @@
                     Please enter a valid email
                 </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="fill">
                 <mat-label>Date of birth</mat-label>
                 <input matInput [matDatepicker]="picker" formControlName="dob">
                 <mat-hint>MM/DD/YYYY</mat-hint>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="row">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="fill">
                 <mat-label>Education</mat-label>
                 <mat-select formControlName="education">
                     <mat-option *ngFor="let val of education" [value]="val">{{val}}
@@ -72,9 +72,9 @@
                     Education is required
                 </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="fill">
                 <mat-label>Company</mat-label>
-                <input matInput placeholder="Ex. Google" formControlName="company">
+                <input matInput formControlName="company">
                 <mat-error *ngIf="empForm.get('company')?.hasError('required')">
                     Company is required
                 </mat-error>

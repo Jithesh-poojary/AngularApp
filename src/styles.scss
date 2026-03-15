@@ -14,6 +14,76 @@ html, body {
   box-sizing: border-box;
 }
 
+:root {
+  --app-input-bg: #f8fafc;
+  --app-input-bg-focus: #ffffff;
+  --app-input-border: #d1d5db;
+  --app-input-border-focus: #2563eb;
+  --app-input-text: #1f2937;
+  --app-input-placeholder: #94a3b8;
+}
+
+/* Global native input styling */
+input:not([matInput]),
+textarea,
+select {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--app-input-border);
+  border-radius: 10px;
+  background: var(--app-input-bg);
+  color: var(--app-input-text);
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+input:not([matInput]):focus,
+textarea:focus,
+select:focus {
+  border-color: var(--app-input-border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background: var(--app-input-bg-focus);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--app-input-placeholder);
+}
+
+/* Global Angular Material input styling */
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  border-radius: 10px !important;
+}
+
+.mat-mdc-form-field .mat-mdc-input-element {
+  color: var(--app-input-text) !important;
+}
+
+.mat-mdc-form-field .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--app-input-bg) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--app-input-bg-focus) !important;
+}
+
+.mat-mdc-form-field .mdc-notched-outline__leading,
+.mat-mdc-form-field .mdc-notched-outline__notch,
+.mat-mdc-form-field .mdc-notched-outline__trailing {
+  border-color: var(--app-input-border) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: var(--app-input-border-focus) !important;
+}
+
 /* Material Design overrides */
 .mat-mdc-raised-button {
   text-transform: uppercase;

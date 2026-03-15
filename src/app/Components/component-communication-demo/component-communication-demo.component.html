@@ -1,0 +1,19 @@
+<div class="demo-page">
+  <mat-card class="header-card">
+    <mat-card-content>
+      <h2>Two Component Communication</h2>
+      <p>
+        This simple use case shows sibling communication through a parent:
+        Component A emits data using &#64;Output and Component B receives data through &#64;Input.
+      </p>
+      <button mat-stroked-button color="warn" (click)="clearMessages()" [disabled]="!messageHistory.length">
+        Clear Messages
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="panel-grid">
+    <app-sender-panel (messageSent)="onMessageSent($event)"></app-sender-panel>
+    <app-receiver-panel [latestMessage]="latestMessage" [history]="messageHistory"></app-receiver-panel>
+  </div>
+</div>

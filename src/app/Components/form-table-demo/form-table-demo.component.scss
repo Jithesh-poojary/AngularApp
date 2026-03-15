@@ -1,0 +1,27 @@
+.form-demo-page {
+  padding: 24px;
+  max-width: 1050px;
+}
+
+.form-card {
+  border-left: 4px solid #0284c7;
+}
+
+.intro {
+  margin: 0 0 16px;
+  color: #334155;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.action-row {
+  margin: 4px 0 16px;
+}
